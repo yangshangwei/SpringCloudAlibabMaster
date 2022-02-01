@@ -1,0 +1,2 @@
+com\artisan\product\RestProductApplication.class
+com\artisan\product\v1\controller\ProductInfoController.class

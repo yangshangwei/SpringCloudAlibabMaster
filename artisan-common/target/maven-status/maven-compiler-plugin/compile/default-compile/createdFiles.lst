@@ -1,0 +1,8 @@
+com\artisan\common\vo\Result.class
+com\artisan\common\vo\OrderAndPayVo.class
+com\artisan\common\entity\PayInfo.class
+com\artisan\common\vo\OrderVo.class
+com\artisan\common\entity\ProductInfo.class
+com\artisan\common\vo\SystemErrorType.class
+com\artisan\common\entity\OrderInfo.class
+com\artisan\common\vo\ErrorType.class
