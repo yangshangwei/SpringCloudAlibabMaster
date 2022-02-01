@@ -26,6 +26,8 @@
         <module>artisan-dao</module>
         <module>artisan-cloud-rest-order</module>
         <module>artisan-cloud-rest-product</module>
+        <module>artisan-cloud-nacosclient-order</module>
+        <module>artisan-cloud-nacosclient-product</module>
     </modules>
 
     <dependencies>
