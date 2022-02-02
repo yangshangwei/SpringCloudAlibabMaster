@@ -30,6 +30,9 @@
         <module>artisan-cloud-nacosclient-product</module>
         <module>artisan-cloud-ribbon-order</module>
         <module>artisan-cloud-ribbon-product</module>
+        <module>artisan-cloud-customcfg-ribbon-order</module>
+        <module>artisan-cloud-customcfg-ribbon-product</module>
+        <module>artisan-cloud-customcfg-ribbon-pay</module>
     </modules>
 
     <dependencies>
