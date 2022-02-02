@@ -39,3 +39,9 @@ artisan-pay-center:
 artisan-product-center:
   ribbon:
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+# ribbon 饥饿加载 解决第一次耗时多的问题
+ribbon:
+  eager-load:
+    enabled: true
+    clients: artisan-pay-center,artisan-product-center  # #可以指定多个微服务用逗号分隔
