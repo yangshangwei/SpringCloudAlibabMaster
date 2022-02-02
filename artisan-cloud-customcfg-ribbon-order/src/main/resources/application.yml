@@ -32,13 +32,13 @@ spring:
     name: artisan-order-center
 
 #自定义Ribbon的细粒度配置 (推荐)
-artisan-pay-center:
-  ribbon:
-    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule
-
-artisan-product-center:
-  ribbon:
-    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+#artisan-pay-center:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule
+#
+#artisan-product-center:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
 
 # ribbon 饥饿加载 解决第一次耗时多的问题
 ribbon:
