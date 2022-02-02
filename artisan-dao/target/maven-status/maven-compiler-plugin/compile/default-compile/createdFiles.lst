@@ -1,6 +1,0 @@
-com\artisan\support\DruidDataSourceProperties.class
-com\artisan\druidconfig\SpringDruidConfig.class
-com\artisan\mapper\OrderInfoMapper.class
-com\artisan\mapper\PayInfoMapper.class
-com\artisan\mapper\ProductInfoMapper.class
-META-INF\spring-configuration-metadata.json

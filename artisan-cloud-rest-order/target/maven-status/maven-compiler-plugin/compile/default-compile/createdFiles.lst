@@ -1,3 +1,0 @@
-com\artisan\order\config\WebConfig.class
-com\artisan\order\RestOrderApplication.class
-com\artisan\order\v1\controller\OrderInfoController.class

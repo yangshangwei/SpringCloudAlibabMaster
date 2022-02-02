@@ -28,6 +28,8 @@
         <module>artisan-cloud-rest-product</module>
         <module>artisan-cloud-nacosclient-order</module>
         <module>artisan-cloud-nacosclient-product</module>
+        <module>artisan-cloud-ribbon-order</module>
+        <module>artisan-cloud-ribbon-product</module>
     </modules>
 
     <dependencies>
