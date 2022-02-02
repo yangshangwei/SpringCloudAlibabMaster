@@ -7,7 +7,7 @@ spring:
         username: root
         password: artisan
         jdbcUrl: jdbc:mysql://localhost:3306/artisandb?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=UTF-8&useSSL=false
-        driverClassName: com.mysql.jdbc.Driver
+        driverClassName: com.mysql.cj.jdbc.Driver
         initialSize: 5
         minIdle: 5
         maxActive: 20
