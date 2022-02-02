@@ -27,6 +27,9 @@ spring:
     nacos:
       discovery:
         server-addr: 1.117.97.88:8848
+        namespace: ccf7167d-6c6a-4233-a6ad-b1b3a8308221
+        group: DealGroup
+        cluster-name: BeiJingCluster
 
   application:
     name: artisan-order-center
