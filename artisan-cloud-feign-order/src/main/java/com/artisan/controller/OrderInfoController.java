@@ -5,6 +5,7 @@ import com.artisan.common.entity.PayInfo;
 import com.artisan.common.entity.ProductInfo;
 import com.artisan.common.vo.OrderAndPayVo;
 import com.artisan.common.vo.OrderVo;
+import com.artisan.feignapi.pay.PayCenterFeignAPI;
 import com.artisan.feignapi.product.ProductCenterFeignAPI;
 import com.artisan.mapper.OrderInfoMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -27,6 +28,9 @@ public class OrderInfoController {
 
     @Autowired
     private ProductCenterFeignAPI productCenterFeignAPI;
+
+    @Autowired
+    private PayCenterFeignAPI payCenterFeignAPI;
 
     @Autowired
     private OrderInfoMapper orderInfoMapper;
@@ -56,7 +60,27 @@ public class OrderInfoController {
 
 
 
+    @RequestMapping("/getOrderAndPayInfoByOrderNo/{orderNo}")
+    public Object getOrderAndPayInfoByOrderNo(@PathVariable("orderNo") String orderNo) {
+        OrderInfo orderInfo = orderInfoMapper.selectOrderInfoById(orderNo);
+        if (null == orderInfo) {
+            return "根据orderNo:" + orderNo + "查询没有该订单";
+        }
 
+        PayInfo payInfo = payCenterFeignAPI.selectPayInfoByOrderNo(orderNo);
+        if (payInfo == null) {
+            return "没有对应的支付信息";
+        }
+
+        OrderAndPayVo orderAndPayVo = new OrderAndPayVo();
+        orderAndPayVo.setOrderNo(orderNo);
+        orderAndPayVo.setProductNo(orderInfo.getProductNo());
+        orderAndPayVo.setProductCount(orderInfo.getProductCount());
+        orderAndPayVo.setPayNo(payInfo.getPayNo());
+        orderAndPayVo.setPayTime(payInfo.getPayTime());
+        orderAndPayVo.setUserName(orderInfo.getUserName());
+        return orderAndPayVo;
+    }
 
 }
     

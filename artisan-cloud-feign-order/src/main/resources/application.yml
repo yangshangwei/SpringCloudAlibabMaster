@@ -42,3 +42,11 @@ logging:
     com:
       artisan:
         feignapi: debug
+# 基于yml文件细粒度配置 - 通过feign:client:config:微服务名称:loggerLevel日志级别来指定
+feign:
+  client:
+    config:  # 可配置多个
+      artisan-product-center:
+        loggerLevel: full
+      artisan-pay-center:
+        loggerLevel: basic

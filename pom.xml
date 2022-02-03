@@ -36,6 +36,7 @@
         <module>artisan-feign-api</module>
         <module>artisan-cloud-feign-order</module>
         <module>artisan-cloud-feign-product</module>
+        <module>artisan-cloud-feign-pay</module>
     </modules>
 
     <dependencies>
