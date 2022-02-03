@@ -33,6 +33,9 @@
         <module>artisan-cloud-customcfg-ribbon-order</module>
         <module>artisan-cloud-customcfg-ribbon-product</module>
         <module>artisan-cloud-customcfg-ribbon-pay</module>
+        <module>artisan-feign-api</module>
+        <module>artisan-cloud-feign-order</module>
+        <module>artisan-cloud-feign-product</module>
     </modules>
 
     <dependencies>
