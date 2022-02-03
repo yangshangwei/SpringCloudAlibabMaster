@@ -27,6 +27,7 @@ spring:
     nacos:
       discovery:
         server-addr: 1.117.97.88:8848
+        cluster-name: BeiJingCluster
 
   application:
     name: artisan-order-center

@@ -23,7 +23,7 @@
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
 
-        <!--加入nocas-client-->
+        <!--加入nacos-client-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-alibaba-nacos-discovery</artifactId>

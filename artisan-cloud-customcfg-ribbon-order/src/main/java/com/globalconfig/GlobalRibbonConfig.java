@@ -1,6 +1,7 @@
 package com.globalconfig;
 
 import com.artisan.customrules.ArtisanWeightedRule;
+import com.artisan.customrules.SameClusterPriorityRule;
 import com.netflix.loadbalancer.IRule;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,7 +20,10 @@ public class GlobalRibbonConfig {
     @Bean
     public IRule globalConfig() {
         // 根据权重的规则
-        return new ArtisanWeightedRule();
+        // return new ArtisanWeightedRule();
+
+        // 同集群优先调用规则
+        return new SameClusterPriorityRule();
     }
 }
     
