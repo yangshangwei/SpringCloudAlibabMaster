@@ -35,3 +35,10 @@ ribbon:
   eager-load:
     enabled: true
     clients: artisan-pay-center,artisan-product-center  # #可以指定多个微服务用逗号分隔
+
+# 子模块下的声明式接口包 日志级别必须是debug ,不然不打印日志
+logging:
+  level:
+    com:
+      artisan:
+        feignapi: debug
