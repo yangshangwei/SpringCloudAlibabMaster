@@ -50,3 +50,8 @@ feign:
         loggerLevel: full
       artisan-pay-center:
         loggerLevel: basic
+#让feign底层使用HttpClient去调用
+  httpclient:
+    enabled: true
+    max-connections: 200 #最大连接数
+    max-connections-per-route: 50 #为每个url请求设置最大连接数
