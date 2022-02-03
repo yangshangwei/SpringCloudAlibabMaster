@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * @author 小工匠
  * @version 1.0
@@ -31,6 +33,8 @@ public class ProductInfoController {
     @RequestMapping("/selectProductInfoById/{productNo}")
     public ProductInfo selectProductInfoById(@PathVariable("productNo") String productNo) throws InterruptedException {
         log.info("artisan-cloud-feign-product - {} 被调用了", port);
+        // 休眠3秒,用来测试超时
+        TimeUnit.SECONDS.sleep(3);
         ProductInfo productInfo = productInfoMapper.selectProductInfoById(productNo);
         return productInfo;
     }

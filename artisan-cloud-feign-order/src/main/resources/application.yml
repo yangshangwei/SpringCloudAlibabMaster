@@ -35,6 +35,10 @@ ribbon:
   eager-load:
     enabled: true
     clients: artisan-pay-center,artisan-product-center  # #可以指定多个微服务用逗号分隔
+  # ribbon超时时间
+  connectTimeout: 2000
+  readTimeout: 2000
+
 
 # 子模块下的声明式接口包 日志级别必须是debug ,不然不打印日志
 logging:
@@ -47,9 +51,13 @@ feign:
   client:
     config:  # 可配置多个
       artisan-product-center:
-        loggerLevel: full
-      artisan-pay-center:
         loggerLevel: basic
+      artisan-pay-center:
+        loggerLevel: full
+
+      default:  # feign超时时间
+        connectTimeout: 5000
+        readTimeout: 5000
 #让feign底层使用HttpClient去调用
   httpclient:
     enabled: true
