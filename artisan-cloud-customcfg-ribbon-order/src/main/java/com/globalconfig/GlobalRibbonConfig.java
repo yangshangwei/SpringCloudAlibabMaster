@@ -2,6 +2,7 @@ package com.globalconfig;
 
 import com.artisan.customrules.ArtisanWeightedRule;
 import com.artisan.customrules.SameClusterPriorityRule;
+import com.artisan.customrules.SameClusterPriorityWithVersionRule;
 import com.netflix.loadbalancer.IRule;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,7 +24,10 @@ public class GlobalRibbonConfig {
         // return new ArtisanWeightedRule();
 
         // 同集群优先调用规则
-        return new SameClusterPriorityRule();
+        // return new SameClusterPriorityRule();
+
+        // 金丝雀版本权重负载均衡策略
+        return new SameClusterPriorityWithVersionRule();
     }
 }
     

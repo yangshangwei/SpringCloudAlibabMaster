@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8081
 
 spring:
   datasource:
@@ -28,6 +28,8 @@ spring:
       discovery:
         server-addr: 1.117.97.88:8848
         cluster-name: BeiJingCluster
+        metadata:
+          current-version: V2
 
   application:
     name: artisan-order-center
