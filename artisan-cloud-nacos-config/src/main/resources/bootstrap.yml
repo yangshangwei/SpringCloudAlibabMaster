@@ -4,15 +4,15 @@ spring:
       config:  # 这里是 config , 服务注册的这个地方是 discovery
         server-addr: 1.117.97.88:8848
         file-extension: yml
-#        shared-dataids: common.yml,common2.yml
-#        refreshable-dataids: common.yml,common2.yml
-#        ext-config:
-#          - data-id: common3.yml
-#            group: DEFAULT_GROUP
-#            refresh: true
-#          - data-id: common4.yml
-#            group: DEFAULT_GROUP
-#            refresh: true
+        shared-dataids: common.yml,common2.yml  # 各个微服务共享的配置,注意排到后面的公共配置yml优先级越高
+        refreshable-dataids: common.yml,common2.yml  # 支持动态刷新的配置文件
+        ext-config:  # 同样配置到越后面的配 优先级越高
+          - data-id: common3.yml
+            group: DEFAULT_GROUP
+            refresh: true
+          - data-id: common4.yml
+            group: DEFAULT_GROUP
+            refresh: true
   application:  # 表示当前微服务需要向配置中心索要artisan-config-center的配置
     name: artisan-config-center
   profiles: # 表示我需要向配置中心索要artisan-config-center的开发环境的配置
