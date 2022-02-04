@@ -5,3 +5,8 @@ spring:
 #    nacos:
 #      discovery:
 #        server-addr: 1.117.97.88:8848
+
+domain:
+  domainNumMap:
+    'kkk': 'vvv'
+    aaa: bbb
