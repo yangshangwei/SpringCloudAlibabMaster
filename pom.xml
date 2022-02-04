@@ -37,6 +37,7 @@
         <module>artisan-cloud-feign-order</module>
         <module>artisan-cloud-feign-product</module>
         <module>artisan-cloud-feign-pay</module>
+        <module>artisan-cloud-nacos-config</module>
     </modules>
 
     <dependencies>

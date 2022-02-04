@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: artisan-config-center
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 1.117.97.88:8848
+
+server: # 配置中心的值会覆盖该值
+  port: 8080
+
