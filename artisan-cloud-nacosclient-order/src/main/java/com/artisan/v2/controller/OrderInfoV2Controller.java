@@ -61,7 +61,7 @@ public class OrderInfoV2Controller {
         // 从对应的服务实例中获取访问地址
         ServiceInstance serviceInstance = instances.get(0);
         String uri = serviceInstance.getUri().toString();
-        log.info("从nacos server中获取的prod地址：", uri);
+        log.info("从nacos server中获取的prod地址：{}", uri);
 
         // 发起远程Http调用
         ResponseEntity<ProductInfo> responseEntity = restTemplate.getForEntity(uri + "/selectProductInfoById/" + orderInfo.getProductNo(), ProductInfo.class);
