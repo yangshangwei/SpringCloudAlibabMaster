@@ -1,0 +1,18 @@
+#Path 谓词  PathRoutePredicateFactory
+#访问http://localhost:8888/**路径  都会转发到http://artisan_order_center/**
+#eg.http://localhost:8888/selectOrderInfoById/1-->http://product-center/selectOrderInfoById/1
+##eg.http://localhost:8888/selectOrderInfoById/2-->http://product-center/selectOrderInfoById/2
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: artisan_order_center #id必须要唯一
+          uri: lb://artisan-cloud-gateway-order
+          predicates:
+            - Path=/order/**
+        - id: artisan_product_center
+          uri: lb://artisan-cloud-gateway-product
+          predicates:
+            - Path=/product/**
+

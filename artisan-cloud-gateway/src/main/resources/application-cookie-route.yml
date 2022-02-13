@@ -1,0 +1,13 @@
+#谓词 Cookie 源码  CookieRoutePredicateFactory
+#表示通过网关的请求 必须带入包含了Cookie name=Company value=Artisan
+#才转发请求
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: cookie-route #id必须要唯一
+          uri: lb://artisan-cloud-gateway-order  # 这里可以使用负载均衡的写法
+          predicates:
+            #当我们的请求中包含了Cookie name=Company value=Artisan
+            #才转发请求
+            - Cookie=Company,Artisan

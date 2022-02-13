@@ -1,0 +1,13 @@
+#Header谓词   源码HeaderRoutePredicateFactory
+#说明请求经过网关 必须带入
+#header的k=X-Request-appId v=Artisan才会被转发
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: header-route #id必须要唯一
+          uri: lb://artisan-cloud-gateway-order
+          predicates:
+            - Header=X-Request-appId,Artisan
+
+

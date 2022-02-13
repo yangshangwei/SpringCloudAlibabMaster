@@ -1,0 +1,12 @@
+#Query 谓词  QueryRoutePredicateFactory 源码
+#当前请求 必须带入参数  http://localhost:8888/selectOrderInfoById/1?company=任意
+#才会被转发
+#到http://artisan-cloud-gateway-order/selectOrderInfoById/1?company=任意
+spring:
+  cloud:
+    gateway:
+      routes:
+       - id: query #id必须要唯一
+         uri: lb://artisan-cloud-gateway-order
+         predicates:
+           - Query=company

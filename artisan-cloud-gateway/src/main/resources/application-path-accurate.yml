@@ -1,0 +1,12 @@
+#Path 谓词  PathRoutePredicateFactory 源码
+#表示:访问http://localhost:8888/selectOrderInfoById/1
+#会转发到http://product-center/selectOrderInfoById/1
+#而http://localhost:8888/selectOrderInfoById/2 不会被转发
+spring:
+  cloud:
+    gateway:
+      routes:
+       - id: path-accurate #id必须要唯一
+         uri: lb://artisan-cloud-gateway-order
+         predicates:
+          - Path=/selectOrderInfoById/1

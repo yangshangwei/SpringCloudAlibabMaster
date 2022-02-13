@@ -1,0 +1,14 @@
+#Host谓词  源码HostRoutePredicateFactory
+#说明请求http://localhost:8888/selectOrderInfoById/1的
+#Host必须满足www.artisan.com:8888或者localhost:8888才会
+#转发到http://artisan-cloud-gateway-order/selectOrderInfoById/1
+
+#而127.0.0.1不会被转发
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: host-route #id必须要唯一
+          uri: lb://artisan-cloud-gateway-order
+          predicates:
+            - Host=www.artisan.com:8888,localhost:8888

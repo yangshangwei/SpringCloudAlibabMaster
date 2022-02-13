@@ -1,0 +1,11 @@
+# Between谓词  BetweenRoutePredicateFactory
+# 就是经过网关请求的当前时间 currentTime 满足
+# Between startTime < currentTime < Between EndTime 才进行转发
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: between-route #id必须要唯一
+          uri: lb://artisan-cloud-gateway-order  # 这里可以使用负载均衡的写法
+          predicates:
+            - Between=2020-02-13T18:27:28.309+08:00[Asia/Shanghai],2025-02-13T18:27:28.309+08:00[Asia/Shanghai]
