@@ -1,0 +1,13 @@
+#  网关的After谓词,对应的源码处理AfterRoutePredicateFactory
+#作用: 经过网关的所有请求 当前时间>比After阈值  就进行转发
+#现在我们是2022年了 currentTime<After阈值，所以网关不会进行转发，而返回404spring:
+spring:
+  cloud:
+    gateway: #gateway
+      routes:
+        - id: after_route  # id 确保唯一
+          uri: lb://artisan-cloud-gateway-order  #  nacos上的 注册地址
+          predicates:
+            - After=2020-02-13T18:27:28.309+08:00[Asia/Shanghai]
+
+

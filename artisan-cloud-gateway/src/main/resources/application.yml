@@ -17,7 +17,7 @@ spring:
       enabled: true  # 是否开启服务网关
 
   profiles:
-    active: tongpei
+    active: after_route
 
 
 management:
