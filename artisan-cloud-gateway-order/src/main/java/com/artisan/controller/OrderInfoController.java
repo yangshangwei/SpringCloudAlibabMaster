@@ -32,11 +32,10 @@ public class OrderInfoController {
     private OrderInfoMapper orderInfoMapper;
 
 
-
     /**
      * 调用地址，硬编码
      */
-   public static final String uri = "http://artisan-cloud-gateway-product/selectProductInfoById/";
+    public static final String uri = "http://artisan-cloud-gateway-product/selectProductInfoById/";
 
 
     @RequestMapping("/selectOrderInfoById/{orderNo}")
@@ -49,7 +48,7 @@ public class OrderInfoController {
 
 
         // 发起远程Http调用
-        ResponseEntity<ProductInfo> responseEntity = restTemplate.getForEntity(uri +  orderInfo.getProductNo(), ProductInfo.class);
+        ResponseEntity<ProductInfo> responseEntity = restTemplate.getForEntity(uri + orderInfo.getProductNo(), ProductInfo.class);
 
         ProductInfo productInfo = responseEntity.getBody();
 
@@ -66,6 +65,10 @@ public class OrderInfoController {
         return orderVo;
     }
 
+    @GetMapping("/artisan/test")
+    public String test() {
+        return "OK";
+    }
 
 }
     
