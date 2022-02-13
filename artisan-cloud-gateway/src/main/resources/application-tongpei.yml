@@ -1,0 +1,15 @@
+# https://blog.csdn.net/yangshangwei/article/details/122889066
+spring:
+  cloud:
+    gateway: #gateway
+      routes:
+        - id: tongpei
+          uri: http://spring.io  #网关转发的地址
+
+          #访问http://localhost:8888/**任意请求都会转发到 http://spring.io/**请求
+          #eg:http://localhost:8888/projects--->http://spring.io/projects
+          predicates:
+            - Path=/projects  #Path就是网关谓词,用来进行路径过滤路由的
+          filters:
+            - AddResponseHeader=X-Request-Company, Artisan
+

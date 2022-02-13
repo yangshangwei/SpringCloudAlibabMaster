@@ -13,11 +13,11 @@ spring:
     gateway: #gateway
       discovery:
         locator:
-          enabled: false  #开启网关拉取nacos的服务 即是否可以通过微服务的名称直接调用接口 【默认值false, 建议保持false】
+          enabled: false  #q 即是否可以通过微服务的名称直接调用接口 【默认值false, 建议保持false】
       enabled: true  # 是否开启服务网关
 
   profiles:
-    active: just4Test
+    active: tongpei
 
 
 management:
