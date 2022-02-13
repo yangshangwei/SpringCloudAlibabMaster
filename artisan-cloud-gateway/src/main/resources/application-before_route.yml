@@ -1,0 +1,14 @@
+#目的：测试网关的Before谓词,对应的源码处理BeforeRoutePredicateFactory
+#作用: 经过网关的所有请求当前时间 比Before=2021-02-13T18:27:28.309+08:00[Asia/Shanghai] 小  就进行转发
+#现在2022年了 时间比配置的阈值大，所以我们不会进行转发，而返回404
+#2021-02-13T18:27:28.309+08:00[Asia/Shanghai] 这个时间怎么获取的呢？ --- System.out.println(ZonedDateTime.now())
+spring:
+  cloud:
+    gateway: #gateway
+      routes:
+        - id: before_route  # id 确保唯一
+          uri: lb://artisan-cloud-gateway-order
+          predicates:
+            - Before=2023-02-13T18:27:28.309+08:00[Asia/Shanghai]
+
+
